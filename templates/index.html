@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Content Analyser</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Public+Sans:300,400&display=swap" rel="stylesheet">
+  
+  <link href="{{url_for('static', filename='style.css')}}" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" defer></script>
+
+  <script src="{{url_for('static', filename='index.js')}}"></script>
+
+  <script src="https://cdn.tiny.cloud/1/s6a6xufycjloikvnwaw1sl6z8b9yns79o567fs4waxzhj58s/tinymce/5/tinymce.min.js"></script>
+  <script>
+      tinymce.init({
+        selector: '#editor',
+        block_formats: 'Paragraph=p; Header 1=h1; Header 2=h2; Header 3=h3',
+        branding: false,
+        menubar: '',
+        body_id: '#text-editor',
+        content_css: "static/style.css"
+      });
+  </script>
+
+</head>
+<header>
+  <h1>Content Analyser</h1>
+  <nav>
+    <ul>
+      <li><a href="#">Algorithm</a></li>
+      <li><a href="#">Donate</a></li>
+    </ul>
+  </nav>
+</header>
+<body>
+  <main id="app">
+    <p>Enter the headline, focus keyword and the content to start analysing!</p>
+    <form id="myForm" action="analyse" method="post" v-on:rest.prevent="clear">
+      <input type="text" name="headline" placeholder="Enter your headline(title)" v-model="headline">
+      <input type="text" name="focus_keyword" placeholder="Enter the main keyword" v-model="focusKeyword">
+      <textarea rows="8px" name="content" cols="70px" id="editor" placeholder="Enter the content (body)" v-model="content"></textarea> <br>      
+      <input type="submit" value="Analyse">
+      <button type="reset">Clear</button>
+    </form>
+  </main>
+</body>
+</html>

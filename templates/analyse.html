@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Content Analyser</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Public+Sans:300,400&display=swap" rel="stylesheet">
+
+  <link href="{{url_for('static', filename='analyse.css')}}" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" defer></script>
+
+  <script src="{{url_for('static', filename='index.js')}}"></script>
+
+</head>
+<header>
+  <h1>Content Analyser</h1>
+  <nav>
+    <ul>
+      <li><a href="#">Algorithm</a></li>
+      <li><a href="#">Donate</a></li>
+    </ul>
+  </nav>
+</header>
+<body>
+  <main id="app">
+
+    <div class="title">
+    <h2>Headline</h2>
+    <p>Analyses for your headline...</p>
+    </div>
+
+    <div class="container">
+    <div>
+        <h3>Word Balance</h3>
+        <h4>Power Word</h4>
+        <p>{{power_word_analysis}}</p>
+
+        <h4>Common Word</h4>
+        <p>{{common_word_analysis}}</p>
+
+        <h4>Uncommon Word</h4>
+        <p>{{uncommon_word_analysis}}</p>
+    </div>
+
+    <div>
+      <h3>Length Analysis</h3>
+      <h4>Word Length</h4>
+      <p>{{word_length_for_headline}}</p>
+    </div>
+
+    <div>
+      <h3>SEO for headline</h3>
+      <h4>Keyword in Headline</h4>
+      <p>{{keyword_in_headline}}</p>
+    </div>
+    </div>
+
+    <div class="title">
+    <h2>Content</h2>
+    <p>Analyses for your content...</p>
+    </div>
+
+    <div class="container">
+        
+      <div>
+        <h3>Text Analysis</h3>
+        <h4>Word Length</h4>
+        <p>{{content_word_length}}</p>
+
+        <h4>Paragraph Analysis</h4>
+        <p>{{paragraph_analysis}}</p>
+
+        <h4>Heading Analysis</h4>
+        <p>{{heading_analysis}}</p>
+      </div>
+
+      <div>
+        <h3>Readability</h3>
+        <h4>Reading Ease</h4>
+        <p>{{reading_ease_score}}</p>
+
+        <h4>Grade Level</h4>
+        <p>{{grade_level_score}}</p>
+    </div>
+    
+    <div>
+      <h3>Hypnotic Writing</h3>
+    </div>
+
+    <div>
+      <h3>SEO for Your Content</h3>
+
+      <h4>Keyword in First Paragraph</h4>
+      <p>{{keyword_in_first_paragraph}}</p>
+    </div>
+
+    </div>
+  </main>
+</body>
+</html>
