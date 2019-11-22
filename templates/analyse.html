@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Content Analyser</title>
 
-  <link href="https://fonts.googleapis.com/css?family=Public+Sans:300,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Public+Sans:300,300i,400&display=swap" rel="stylesheet">
 
   <link href="{{url_for('static', filename='analyse.css')}}" rel="stylesheet">
 
@@ -35,7 +35,7 @@
     <div class="container">
     <div>
         <h3>Word Balance</h3>
-        <h4>Power Word</h4>
+        <h4>Power Word(Emotional Words)</h4>
         <p>{{power_word_analysis}}</p>
 
         <h4>Common Word</h4>
@@ -46,15 +46,16 @@
     </div>
 
     <div>
-      <h3>Length Analysis</h3>
+      <h3>Search Engine Optimisation</h3>
+
       <h4>Word Length</h4>
       <p>{{word_length_for_headline}}</p>
-    </div>
 
-    <div>
-      <h3>SEO for headline</h3>
       <h4>Keyword in Headline</h4>
       <p>{{keyword_in_headline}}</p>
+
+      <h4>Figure in Headline</h4>
+      <p>{{number_in_headline}}</p>
     </div>
     </div>
 
@@ -75,26 +76,31 @@
 
         <h4>Heading Analysis</h4>
         <p>{{heading_analysis}}</p>
-      </div>
 
-      <div>
-        <h3>Readability</h3>
         <h4>Reading Ease</h4>
         <p>{{reading_ease_score}}</p>
 
         <h4>Grade Level</h4>
         <p>{{grade_level_score}}</p>
-    </div>
-    
-    <div>
-      <h3>Hypnotic Writing</h3>
-    </div>
+
+        <h4>Sentence Length</h4>
+        <p>{{sentence_length}}</p>
+      </div>
 
     <div>
-      <h3>SEO for Your Content</h3>
+      <h3>Search Engine Optimisation</h3>
 
       <h4>Keyword in First Paragraph</h4>
       <p>{{keyword_in_first_paragraph}}</p>
+
+      <h4>Keyword in Heading</h4>
+      <p>{{heading_focus_keyword}}</p>
+
+      <h4>Image</h4>
+      <p>{{check_image}}</p>
+
+      <h4>Links</h4>
+      <p>{{links_analysis}}</p>
     </div>
 
     </div>

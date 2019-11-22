@@ -8,6 +8,11 @@ body {
     color: #2e2e2e;
 }
 
+p {
+    font-size: 1em;
+    line-height: 1.6em;
+}
+
 a {
     color: #007fff;
     text-decoration: none;
@@ -31,6 +36,7 @@ h2 {
 
 h3 {
     font-size: 1.3em;
+    text-transform: uppercase;
 }
 
 h4 {
@@ -64,7 +70,7 @@ ul li {
     padding: 10px;
     display: grid;
     grid-template-columns: 45% 45%;
-    gap: 10px;
+    gap: 20px;
 }
 
 .title {
