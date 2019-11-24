@@ -83,10 +83,9 @@ def analyse():
         keyword_in_headline = "Oops! Your focus keyword didn't appear in your headline."
 
     # Number in headline
-    num = int()
     for word in headline.split(' '):
-        if type(word) == int or type(word) == float:
-            if word % 2 != 0:
+        if word.isdigit():
+            if int(word) % 2 != 0:
                 number_in_headline = 'Amazing! Some numbers appeared in your headline. This helps to improve your click-through-rate on the search engine.'
                 headline_score += 10
             else:
