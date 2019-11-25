@@ -32,30 +32,53 @@
     <p>Analyses for your headline...</p>
     </div>
 
-    <div class="container">
     <div>
         <h3>Word Balance</h3>
-        <h4>Power Word(Emotional Words)</h4>
-        <p>{{power_word_analysis}}</p>
+        <h4>Power Word</h4>
+        {% if green_color %}
+        <div class="green"><p>{{power_word_analysis}}</p></div>
+        {% else %}
+        <div class="red"><p>{{power_word_analysis}}</p></div>
+        {% endif %}
 
         <h4>Common Word</h4>
-        <p>{{common_word_analysis}}</p>
+        {% if green_color %}
+        <div class="green"><p>{{common_word_analysis}}</p></div>
+        {% else %}
+        <div class="red"><p>{{common_word_analysis}}</p></div>
+        {% endif %}
 
         <h4>Uncommon Word</h4>
-        <p>{{uncommon_word_analysis}}</p>
+        {% if green_color %}
+        <div class="green"><p>{{uncommon_word_analysis}}</p></div>
+        {% else %}
+        <div class="red"><p>{{uncommon_word_analysis}}</p></div>
+        {% endif %}
     </div>
 
     <div>
       <h3>Search Engine Optimisation</h3>
 
       <h4>Word Length</h4>
-      <p>{{word_length_for_headline}}</p>
+      {% if green_color %}
+      <div class="green"><p>{{word_length_for_headline}}</p></div>
+      {% else %}
+      <div class="red"><p>{{word_length_for_headline}}</p></div>
+      {% endif %}
 
       <h4>Keyword in Headline</h4>
-      <p>{{keyword_in_headline}}</p>
+      {% if green_color %}
+      <div class="green"><p>{{keyword_in_headline}}</p></div>
+      {% else %}
+      <div class="red"><p>{{keyword_in_headline}}</p></div>
+      {% endif %}
 
       <h4>Figure in Headline</h4>
-      <p>{{number_in_headline}}</p>
+      {% if green_color %}
+      <div class="green"><p>{{number_in_headline}}</p></div>
+      {% else %}
+      <div class="red"><p>{{number_in_headline}}</p></div>
+      {% endif %}
     </div>
     </div>
 
@@ -63,46 +86,83 @@
     <h2>Content</h2>
     <p>Analyses for your content...</p>
     </div>
-
-    <div class="container">
         
       <div>
         <h3>Text Analysis</h3>
-        <h4>Word Length</h4>
-        <p>{{content_word_length}}</p>
 
         <h4>Paragraph Analysis</h4>
-        <p>{{paragraph_analysis}}</p>
+        {% if green_color %}
+        <div class="green"><p>{{paragraph_analysis}}</p></div>
+        {% else %}
+        <div class="red"><p>{{paragraph_analysis}}</p></div>
+        {% endif %}
 
         <h4>Heading Analysis</h4>
-        <p>{{heading_analysis}}</p>
+        {% if green_color %}
+        <div class="green"><p>{{heading_analysis}}</p></div>
+        {% else %}
+        <div class="red"><p>{{heading_analysis}}</p></div>
+        {% endif %}
 
         <h4>Reading Ease</h4>
-        <p>{{reading_ease_score}}</p>
+        {% if green_color %}
+        <div class="green"><p>{{reading_ease_score}}</p></div>
+        {% else %}
+        <div class="red"><p>{{reading_ease_score}}</p></div>
+        {% endif %}
 
         <h4>Grade Level</h4>
-        <p>{{grade_level_score}}</p>
+        {% if green_color %}
+        <div class="green"><p>{{grade_level_score}}</p></div>
+        {% else %}
+        <div class="red"><p>{{grade_level_score}}</p></div>
+        {% endif %}
 
         <h4>Sentence Length</h4>
-        <p>{{sentence_length}}</p>
+        {% if green_color %}
+        <div class="green"><p>{{sentence_length}}</p></div>
+        {% else %}
+        <div class="red"><p>{{sentence_length}}</p></div>
+        {% endif %}
       </div>
 
     <div>
       <h3>Search Engine Optimisation</h3>
 
+      <h4>Word Length</h4>
+      {% if green_color %}
+      <div class="green"><p>{{content_word_length}}</p></div>
+      {% else %}
+      <div class="red"><p>{{content_word_length}}</p></div>
+      {% endif %}
+
       <h4>Keyword in First Paragraph</h4>
-      <p>{{keyword_in_first_paragraph}}</p>
+      {% if green_color %}
+      <div class="green"><p>{{keyword_in_first_paragraph}}</p></div>
+      {% else %}
+      <div class="red"><p>{{keyword_in_first_paragraph}}</p></div>
+      {% endif %}
 
       <h4>Keyword in Heading</h4>
-      <p>{{heading_focus_keyword}}</p>
+      {% if green_color %}
+      <div class="green"><p>{{heading_focus_keyword}}</p></div>
+      {% else %}
+      <div class="red"><p>{{heading_focus_keyword}}</p></div>
+      {% endif %}
 
       <h4>Image</h4>
-      <p>{{check_image}}</p>
+      {% if green_color %}
+      <div class="green"><p>{{check_image}}</p></div>
+      {% else %}
+      <div class="red"><p>{{check_image}}</p></div>
+      {% endif %}
 
       <h4>Links</h4>
-      <p>{{links_analysis}}</p>
-    </div>
-
+      {% if green_color %}
+      <div class="green"><p>{{links_analysis}}</p></div>
+      {% else %}
+      <div class="red"><p>{{links_analysis}}</p></div>
+      {% endif %}
     </div>
   </main>
 </body>
