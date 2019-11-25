@@ -215,13 +215,13 @@ def analyse():
     if len(images) > 0:
         check_image = 'Nice! Image(s) appeared in your content.'
     else:
-        check_image = 'An image are missing in your content. Images gives the visual expression of what your content is talking about, at least one image should appeared in your content.'
+        check_image = 'An image is missing in your content. Images gives a visual representation of what your content is talking about, at least one image should appeared in your content.'
 
     # Link
     links = soup.find_all('a')
 
     if len(links) > 0:
-        links_analysis = 'It is so much cool that you content is linking to other people\'s content.'
+        links_analysis = 'It is so very cool that your content is linking to other people\'s content.'
     else:
         links_analysis = 'At least you should be linking to content.'
 
