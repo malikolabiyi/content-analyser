@@ -35,12 +35,11 @@ h2 {
 }
 
 h3 {
-    font-size: 1.3em;
-    text-transform: uppercase;
+    font-size: 1.2em;
 }
 
 h4 {
-    font-size: 1.2em;
+    font-size: 1.1em;
 }
 
 header {
@@ -63,24 +62,29 @@ ul li {
     margin-right: 10px;
 }
 
-.container {
-    background-color: #007fff;
-    color: white;
-    margin: 0;
-    padding: 10px;
-    display: grid;
-    grid-template-columns: 45% 45%;
-    gap: 20px;
+main {
+    width: 50%;
+    margin: auto;
 }
 
-.title {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
+.green {
+    background-color: green;
+    padding: 5px;
+}
+
+.green p, .red p {
+    color: white;
+    font-size: 1em;
+    line-height: 1.6em;
+}
+
+.red {
+    background-color: #ff6347;
+    padding: 5px;
 }
 
 @media(max-width: 768px) {
-    .container {
-        display: block;
+    main {
+        width: 80%;
     }
 }
