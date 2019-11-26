@@ -36,12 +36,14 @@ def analyse():
         number_power_words = len(power_words)
 
         if number_power_words > 0:
-            power_word_analysis = "Your headline have " + str(number_power_words) + " power words. Power words also known as phrases indicates intense trigger words that frequently command a reader's attention and action."
+            power_word_analysis = "Your headline has " + str(number_power_words) + " power words. Power words, also known as phrases, indicate intense trigger words that frequently command a reader's attention and action."
             headline_score += 30
             green_color = True
         else:
+            power_word_analysis: 'Your headline must contain at least one power word.'
             power_word_analysis: 'Your headline ought to contain atleast one power word.'
             red_color = True
+
     p.close()
 
     #Common words
@@ -54,12 +56,14 @@ def analyse():
         number_common_words = len(common_words)
 
         if number_common_words > 0:
-            common_word_analysis = "Good! Your headline have " + str(number_common_words) + " common words. Common words make up the basic structure of readable headlines. It is recommended that a headline should be made up of 2 to 3 common words."
+            common_word_analysis = "Good! Your headline has " + str(number_common_words) + " common words. Common words make up the basic structure of readable headlines. It is recommended that a headline should be made up of 2 to 3 common words."
             headline_score += 10
             green_color = True
         else:
+            common_word_analysis: 'Your headline must contain at least 2 common words. Common words make up the basic structure of readable headlines.'
             common_word_analysis: 'Your headline ought to contain atleast 2 common words. Common words make up the basic structure of readable headlines.'
             red_color = True
+
     c.close()
 
     #Uncommon words
@@ -72,10 +76,11 @@ def analyse():
         number_uncommon_words = len(uncommon_words)
 
         if number_uncommon_words > 0:
-            uncommon_word_analysis = "Good! Your headline have " + str(number_uncommon_words) + " uncommon words. Uncommon words should occur less frequently than common words, but it is recommended to give your headline substance by adding 2 uncommon words."
+            uncommon_word_analysis = "Good! Your headline has " + str(number_uncommon_words) + " uncommon words. Uncommon words should occur less frequently than common words, but it is recommended to give your headline substance by adding 2 uncommon words."
             headline_score += 10
             green_color = True
         else:
+            uncommon_word_analysis = 'Your headline must contain at least 1 uncommon word. Uncommon words should occur less frequently than common words, but it is recommended to give your headline substance by adding 2 uncommon words.'
             uncommon_word_analysis = 'Your headline ought to contain atleast a uncommon word. Uncommon words should occur less frequently than common words, but it is recommended to give your headline substance by adding 2 uncommon words.'
             red_color = True
     uc.close()
@@ -95,13 +100,15 @@ def analyse():
         if word.isdigit():
             green_color = True
             if int(word) % 2 != 0:
-                number_in_headline = 'Amazing! Some numbers appeared in your headline. This helps to improve your click-through-rate on the search engine.'
+                number_in_headline = 'Amazing! Some numbers appeared in your headline. This helps improve your click-through-rate on the search engine.'
                 headline_score += 10
             else:
                 number_in_headline = 'Though some figures appeared but it is an even number, it is better if an odd number appeared.'
         else:
+            number_in_headline = 'Your headline doesn\'t contain a figure, it is recommended to have a figure especially if you\'re writing on listing topics like \'top 9 places to visit\'. This helps to improve your click-through-rate on the search engine.'
             number_in_headline = 'Your headline doesn\'t contain a figure, it is recommended to have a figure especially if you\'re writing on listing topics like top 9 places to visit. This helps to improve your click-through-rate on the search engine.'
             red_color = True
+
 
     # Word Length for headline
 
@@ -154,11 +161,14 @@ def analyse():
         reading_ease_score = 'Your content is very confusing to read.'
         red_color = True
     else:
-        reading_ease_score = 'You didn\'t put in any message'
+        reading_ease_score = 'You didn\'t input any message'
     
     grade_level = textstat.flesch_kincaid_grade(content_without_tags)
 
     grade_level_score = math.ceil(grade_level)
+
+
+    grade_level_score = 'Your content can be comprehended by someone in ' + str(grade_level_score) + 'th grade and above.'
 
     if grade_level_score > 20:
         red_color = True
@@ -166,6 +176,7 @@ def analyse():
         green_color = True
 
     grade_level_score = 'Your content can be comprehend by someone in ' + str(grade_level_score) + 'th grade and above.'
+
 
     # word length for content
     content_word_length_number = len(re.findall(r'\w+', content_without_tags))
@@ -194,6 +205,9 @@ def analyse():
         keyword_in_first_paragraph = 'Your focus keyword appeared in the first paragraph of your content, +1 for this!'
         green_color = True
     else:
+
+        keyword_in_first_paragraph = "Your focus keyword must appear in your first paragraph, in case you don't have a meta description, this is going to show on the search engine."
+
         keyword_in_first_paragraph = "Your focus keyword ought to appear in your first paragraph, incase you don't have a meta description, this is going to show on the search engine."
         red_color = True
 
@@ -214,7 +228,7 @@ def analyse():
     else:
         red_color = True
 
-    paragraph_analysis = 'Your content has ' + str(len(paragraphs)) + " paragraphs, only " + str(len(good_paragraph_length)) + " paragraphs contains the recommended number of words while " + str(len(bad_paragraph_length)) + " paragraphs contain much words than recommended."
+    paragraph_analysis = 'Your content has ' + str(len(paragraphs)) + " paragraphs, only " + str(len(good_paragraph_length)) + " paragraphs contains the recommended number of words while " + str(len(bad_paragraph_length)) + " paragraphs contain more words than recommended."
 
     # Heading
 
@@ -242,12 +256,16 @@ def analyse():
         else:
             heading_without_focus_keyword.append(heading)
     
+
+    heading_focus_keyword = "Your content has " + str(len(headings)) + " heading(s) only " + str(len(heading_with_focus_keyword)) + " heading(s) contains your focus keyword while " + str(len(heading_without_focus_keyword)) + " heading(s) don't contain your focus keyword. It is recommended that your focus keyword should appear at least in 2 headings but not all to avoid keyword stuffing." 
+
     if len(headings) != 0:
         green_color = True
     else:
         red_color = True
     
     heading_focus_keyword = "Your content has " + str(len(headings)) + " heading(s) only " + str(len(heading_with_focus_keyword)) + " heading(s) contains your focus keyword while " + str(len(heading_without_focus_keyword)) + " heading(s) doesn't contain your focus keyword. It is recommended that your focus keyword should appear atleast in 2 heading but not all to avoid keyword stuffing." 
+
     
     # Image
     images = []
@@ -259,18 +277,28 @@ def analyse():
         check_image = 'Nice! Image(s) appeared in your content.'
         green_color = True
     else:
+
+        check_image = 'An image is missing in your content. Images gives a visual representation of what your content is talking about, at least one image should appeared in your content.'
+
         check_image = 'An image are missing in your content. Images gives the visual expression of what your content is talking about, atleast one image should appeared in your content.'
         red_color = True
+
 
     # Link
     links = soup.find_all('a')
 
     if len(links) > 0:
+
+        links_analysis = 'It is so very cool that your content is linking to other people\'s content.'
+    else:
+        links_analysis = 'At least you should be linking to content.'
+
         links_analysis = 'It is so much cool that you content is linking to other people\'s content.'
         green_color = True
     else:
         links_analysis = 'Atleast you should be linking to content.'
         red_color = True
+
 
     # Sentence Length
     good_sentence_length = []
@@ -288,7 +316,7 @@ def analyse():
                 bad_sentence_length.append(sentence)
                 red_color = True
 
-    sentence_length = 'Your content has ' + str(len(sentences)) + " sentences, only " + str(len(good_sentence_length)) + " sentences contains the recommended number of words (less than 20) while " + str(len(bad_sentence_length)) + " sentences contain much words than recommended."
+    sentence_length = 'Your content has ' + str(len(sentences)) + " sentences, only " + str(len(good_sentence_length)) + " sentences contains the recommended number of words (fewer than 20) while " + str(len(bad_sentence_length)) + " sentences contain more than recommended."
 
     return render_template('analyse.html', green_color=green_color, red_color=red_color, links_analysis=links_analysis, sentence_length=sentence_length, headline_score=headline_score, check_image=check_image, number_in_headline=number_in_headline, heading_focus_keyword=heading_focus_keyword, heading_analysis=heading_analysis, keyword_in_first_paragraph=keyword_in_first_paragraph, paragraph_analysis=paragraph_analysis, uncommon_word_analysis=uncommon_word_analysis, common_word_analysis=common_word_analysis, power_word_analysis=power_word_analysis, keyword_in_headline=keyword_in_headline, word_length_for_headline=word_length_for_headline, reading_ease_score=reading_ease_score, grade_level_score=grade_level_score, content_word_length=content_word_length)
     
