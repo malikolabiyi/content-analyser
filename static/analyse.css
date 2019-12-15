@@ -1,6 +1,6 @@
 
 body {
-    font-family: 'Public Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 18px;
     font-weight: 300;
     background-color: #ffffff;
@@ -35,15 +35,15 @@ h2 {
 }
 
 h3 {
-    font-size: 1.2em;
+    font-size: 1.3em;
 }
 
 h4 {
-    font-size: 1.1em;
+    font-size: 1.2em;
 }
 
 header {
-    color: #007fff;
+    color: #4dabf7;
     padding: 10px;
     margin: 0;
     box-shadow: 1px 1px #efefef;
@@ -58,7 +58,7 @@ ul {
 ul li {
     display: inline-block;
     font-size: 1em;
-    color: #007fff;
+    color: #4dabf7;
     margin-right: 10px;
 }
 
@@ -67,20 +67,8 @@ main {
     margin: auto;
 }
 
-.green {
-    background-color: green;
-    padding: 5px;
-}
-
-.green p, .red p {
-    color: white;
-    font-size: 1em;
-    line-height: 1.6em;
-}
-
-.red {
-    background-color: #ff6347;
-    padding: 5px;
+section {
+    margin-bottom: 10%;
 }
 
 @media(max-width: 768px) {
