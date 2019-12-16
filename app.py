@@ -10,6 +10,10 @@ app = Flask(__name__)
 def home():
     return render_template('index.html')
 
+@app.route("/algorithms")
+def algorithms():
+    return render_template('algorithms.html')
+
 @app.route("/analyse", methods=['POST', "GET"])
 def analyse():
     if request.method == 'POST':

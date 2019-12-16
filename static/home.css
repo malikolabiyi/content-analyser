@@ -1,0 +1,100 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    background-color: #ffffff;
+    margin: 0;
+    color: #2e2e2e;
+}
+
+a {
+    color:#4dabf7;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: 400;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h1 {
+    font-size: 1.5em;
+    font-weight: 400;
+}
+
+h2 {
+    font-size: 1.3em;
+    font-weight: 400;
+}
+
+h3 {
+    font-size: 1.2em;
+    font-weight: 400;
+}
+
+header {
+    color:#4dabf7;
+    padding: 10px;
+    margin: 0;
+    box-shadow: 1px 1px #efefef;
+    display: flex;
+    justify-content: space-between;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul li {
+    display: inline-block;
+    font-size: 1em;
+    color:#4dabf7;
+    margin-right: 10px;
+}
+
+main {
+    width: 90%;
+    margin: 10px auto;
+}
+
+input, textarea {
+    padding: 10px;
+    font-size: 1em;
+    font-family: inherit;
+    border: 1px solid #efefef;
+    width: 80%;
+    border-radius: 10px;
+    overflow: auto;
+    margin-bottom: 10px;
+    line-height: 1.6em;
+}
+
+input[type="submit"] {
+    background-color: #4dabf7;
+    color: #ffffff;
+    font-size: 1em;
+    font-family: inherit;
+    padding: 10px;
+    border: 0;
+    border-radius: 5%;
+    width: 100px;
+}
+
+button[type="reset"] {
+    background-color:  #2e2e2e;
+    color: #ffffff;
+    font-size: 1em;
+    font-family: inherit;
+    padding: 10px;
+    border: 0;
+    border-radius: 5%;
+    width: 100px;
+}
+
+@media(max-width: 768px) {
+    main {
+        display: block;
+        padding: 10px;
+    }
+}

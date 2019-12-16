@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Content Analyser</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+    
+  <link href="{{url_for('static', filename='style.css')}}" rel="stylesheet">
+
+  <script src="{{url_for('static', filename='index.js')}}"></script>
+
+</head>
+<header>
+  <h1>Content Analyser</h1>
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Donate</a></li>
+    </ul>
+  </nav>
+</header>
+<body>
+  <main>
+    <section id="header">
+        <h2>Headline</h2>
+        <p>Algorithms used for the headline...</p>
+    
+        <div>
+            <h3>Word Balance</h3>
+            <p id="power_word">Power Word: Power words also known as phrases indicates intense trigger words that frequently command a reader's attention and action. It is recommended that a headline should contain at least 1 power phrase or word.</p>
+    
+            <p id="common_word">Common Word: Common words make up the basic structure of readable headlines. It is recommended that a headline should be made up of 20 - 30% common words.</p>
+    
+            <p id="uncommon_word">Uncommon Word: Uncommon words occur less frequently than common words, but give your headline substance. It is recommended that a headline should be made up of 10-20% uncommon words.</p>
+        </div>
+    
+        <div>
+          <h3>Search Engine Optimisation</h3>
+    
+          <p id="word_length">Word Length: {{word_length_for_headline}}</p>
+    
+          <p id="keyword_in_headline">Keyword in Headline: {{keyword_in_headline}}</p>
+    
+          <p id="number_in_headline">Figure in Headline: {{number_in_headline}}</p>
+        </div>
+        </section>
+    
+        <section id="content">
+          <h2>Content</h2>
+          <p>Analyses for your content...</p>
+              
+            <div>
+              <h3>Text Analysis</h3>
+              <p>Paragraph Analysis: {{paragraph_analysis}}</p>
+    
+              <p>Heading Analysis: {{heading_analysis}}</p>
+    
+              <p>Reading Ease: The average grade of those who can comprehend your content.</p>
+    
+              <p>Grade Level: {{grade_level_score}}</p></div>
+    
+              <p>Sentence Length: {{sentence_length}}</p>
+    
+            </div>
+    
+          <div>
+            <h3>Search Engine Optimisation</h3>
+    
+            <p>Word Length: It must be greater than 300 words.</p>
+    
+            <p>Keyword in Heading: {{heading_focus_keyword}}</p>
+    
+            <p>Image: {{check_image}}</p>
+    
+            <p>Links: {{links_analysis}}</p>
+            </div>
+          </section>
+  </main>
+</body>
+</html>

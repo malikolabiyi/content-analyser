@@ -8,7 +8,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
   
-  <link href="{{url_for('static', filename='analyse.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='style.css')}}" rel="stylesheet">
 
   <script src="{{url_for('static', filename='index.js')}}"></script>
 
@@ -17,8 +17,7 @@
   <h1>Content Analyser</h1>
   <nav>
     <ul>
-      <li><a href="#">Algorithm</a></li>
-      <li><a href="#">Donate</a></li>
+      <li><a href="/algorithms">Algorithm</a></li>
     </ul>
   </nav>
 </header>
@@ -31,21 +30,21 @@
 
     <div>
         <h3>Word Balance</h3>
-        <p>Power Word: {{power_word_analysis}}</p>
+        <p><a href="/algorithms#power_word">Power Word</a>: {{power_word_analysis}}</p>
 
-        <p>Common Word: {{common_word_analysis}}</p>
+        <p><a href="/algorithms#common_word">Common Word</a>: {{common_word_analysis}}</p>
 
-        <p>Uncommon Word: {{uncommon_word_analysis}}</p>
+        <p><a href="/algorithms#uncommon_word">Uncommon Word</a> {{uncommon_word_analysis}}</p>
     </div>
 
     <div>
       <h3>Search Engine Optimisation</h3>
 
-      <p>Word Length: {{word_length_for_headline}}</p>
+      <p><a href="/algorithms#word_length">Word Length</a>: {{word_length_for_headline}}</p>
 
-      <p>Keyword in Headline: {{keyword_in_headline}}</p>
+      <p><a href="/algorithms#keyword_in_headline">Keyword in Headline</a>: {{keyword_in_headline}}</p>
 
-      <p>Figure in Headline: {{number_in_headline}}</p>
+      <p><a href="/algorithms#number_in_headline">Number in Headline</a>: {{number_in_headline}}</p>
     </div>
     </section>
 

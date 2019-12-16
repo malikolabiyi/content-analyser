@@ -8,22 +8,40 @@ body {
     color: #2e2e2e;
 }
 
+p {
+    font-size: 1em;
+    line-height: 1.8em;
+}
+
 a {
-    color: #007fff;
+    color: #4dabf7;
     text-decoration: none;
+    font-size: 1em;
+    font-weight: 400;
 }
 
 a:hover {
     text-decoration: underline;
 }
 
-h1 {
-    font-size: 1.5em;
+h1, h2, h3, h4, h5, h6 {
     font-weight: 400;
 }
 
+h1 {
+    font-size: 1.6em;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+h3 {
+    font-size: 1.2em;
+}
+
 header {
-    color: #007fff;
+    color: #4dabf7;
     padding: 10px;
     margin: 0;
     box-shadow: 1px 1px #efefef;
@@ -38,64 +56,21 @@ ul {
 ul li {
     display: inline-block;
     font-size: 1em;
-    color: #007fff;
+    color: #4dabf7;
     margin-right: 10px;
 }
 
 main {
-    width: 90%;
-    margin: 10px auto;
+    width: 50%;
+    margin: auto;
 }
 
-input, textarea {
-    padding: 10px;
-    font-size: 1em;
-    font-family: inherit;
-    border: 1px solid #efefef;
-    width: 80%;
-    border-radius: 10px;
-    overflow: auto;
-    margin-bottom: 10px;
-    line-height: 1.6em;
-}
-
-#text-editor {
-    padding: 10px !important; 
-    font-size: 1em !important;
-    font-family: inherit !important;
-    border: 1px solid #efefef;
-    width: 80%;
-    border-radius: 10px;
-    overflow: auto !important;
-    margin-bottom: 10px;
-    line-height: 1.6em;
-}
-
-input[type="submit"] {
-    background-color:  #007fff;
-    color: #ffffff;
-    font-size: 1em;
-    font-family: inherit;
-    padding: 10px;
-    border: 0;
-    border-radius: 5%;
-    width: 100px;
-}
-
-button[type="reset"] {
-    background-color:  #2e2e2e;
-    color: #ffffff;
-    font-size: 1em;
-    font-family: inherit;
-    padding: 10px;
-    border: 0;
-    border-radius: 5%;
-    width: 100px;
+section {
+    margin-bottom: 10%;
 }
 
 @media(max-width: 768px) {
     main {
-        display: block;
-        padding: 10px;
+        width: 80%;
     }
 }
