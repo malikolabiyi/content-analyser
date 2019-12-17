@@ -111,7 +111,6 @@ def analyse():
         headline_score += 20
          
     
-    
     ''' Content '''
 
     soup = BeautifulSoup(content, 'lxml')
@@ -127,32 +126,21 @@ def analyse():
     reading_ease = math.ceil(int(reading_ease_))
 
     if reading_ease in range(90,101):
-        reading_ease_score = 'Your content is very easy to read.'
-        
+        reading_ease_score = 'Your flesch reading ease score is ' + str(reading_ease) + '. Your content is very easy to read. Easily understood by an average 11-year-old student.'    
     elif reading_ease in range(80,91):
-        reading_ease_score = 'Your content is easy to read.'
-        
+        reading_ease_score = 'Your flesch reading ease score is ' + str(reading_ease) + '. Your content is easy to read, it can be understood by 6th grade students.'
     elif reading_ease in range(70,81):
-        reading_ease_score = 'Your content is fairly easy to read.'
-        
+        reading_ease_score = 'Your flesch reading ease score is ' + str(reading_ease) + '. Your content is fairly easy to read, it can be understood by 7th grade students.'      
     elif reading_ease in range(60,71):
-        reading_ease_score = 'Your content is of standard to read. It is not difficult and not easy to read.'
-        
+        reading_ease_score = 'Your flesch reading ease score is ' + str(reading_ease) + '. Your content is of standard to read, it can be understood by Easily understood by 13- to 15-year-old students in 8th & 9th grade.'    
     elif reading_ease in range(50,61):
-        reading_ease_score = 'Your content is fairly difficult to read.'
+        reading_ease_score = 'Your flesch reading ease score is ' + str(reading_ease) + '. Your content is fairly difficult to read, it can be understood by 10th to 12th grade.'
     elif reading_ease in range(30,51):
-        reading_ease_score = 'Your content is difficult to read.'
+        reading_ease_score = 'Your flesch reading ease score is ' + str(reading_ease) + '. Your content is difficult to read, it can be understood by a college graduate.'
     elif reading_ease in range(0,31):
-        reading_ease_score = 'Your content is very confusing to read.'
+        reading_ease_score = 'Your flesch reading ease score is ' + str(reading_ease) + '. Your content is very confusing to read, it can be understood by a university graduate.'
     else:
         reading_ease_score = 'You didn\'t input any message'
-    
-    grade_level = textstat.flesch_kincaid_grade(content_without_tags)
-
-    grade_level_score = math.ceil(grade_level)
-
-    grade_level_score = 'Your content can be comprehend by someone in ' + str(grade_level_score) + 'th grade and above.'
-
 
     # word length for content
     content_word_length_number = len(re.findall(r'\w+', content_without_tags))
@@ -170,16 +158,10 @@ def analyse():
     
     # SEO for Content
 
-    # Keyword in first paragraph
     paragraphs = []
 
     for paragraph in soup.find_all('p'):
         paragraphs.append(paragraph)
-
-    if focus_keyword in paragraphs[0]:
-        keyword_in_first_paragraph = 'Your focus keyword appeared in the first paragraph of your content, +1 for this!'
-    else:
-        keyword_in_first_paragraph = "Your focus keyword must appear in your first paragraph, in case you don't have a meta description, this is going to show on the search engine."
 
     # Paragraph Length.
     good_paragraph_length = []
@@ -246,7 +228,28 @@ def analyse():
 
     sentence_length = 'Your content has ' + str(len(sentences)) + " sentences, only " + str(len(good_sentence_length)) + " sentences contains the recommended number of words (fewer than 20) while " + str(len(bad_sentence_length)) + " sentences contain more than recommended."
 
-    return render_template('analyse.html', links_analysis=links_analysis, sentence_length=sentence_length, headline_score=headline_score, number_in_headline=number_in_headline, heading_focus_keyword=heading_focus_keyword, heading_analysis=heading_analysis, keyword_in_first_paragraph=keyword_in_first_paragraph, paragraph_analysis=paragraph_analysis, uncommon_word_analysis=uncommon_word_analysis, common_word_analysis=common_word_analysis, power_word_analysis=power_word_analysis, keyword_in_headline=keyword_in_headline, word_length_for_headline=word_length_for_headline, reading_ease_score=reading_ease_score, grade_level_score=grade_level_score, content_word_length=content_word_length)
+   ''' # Consecutive Sentences
+    good_sentences = []
+    bad_sentences = []
+
+    for paragraph in paragraphs:
+        paragraph = paragraph.text
+        sentences = re.split(r'[.!?]+', paragraph)
+
+    first_sentence = sentences[0]
+
+    first_sentence_word = first_sentence.split(' ')[0]
+
+    for sentence in sentences[1:3]:
+        if sentence.split(' ')[0].lower() == first_sentence_word.lower():
+            print(sentence)
+        else:
+            print("There is no consequtive sentence")
+
+    sentence_length = 'Your content has ' + str(len(sentences)) + " sentences, only " + str(len(good_sentence_length)) + " sentences contains the recommended number of words (fewer than 20) while " + str(len(bad_sentence_length)) + " sentences contain more than recommended."
+    '''
+    
+    return render_template('analyse.html', links_analysis=links_analysis, sentence_length=sentence_length, headline_score=headline_score, number_in_headline=number_in_headline, heading_focus_keyword=heading_focus_keyword, heading_analysis=heading_analysis, paragraph_analysis=paragraph_analysis, uncommon_word_analysis=uncommon_word_analysis, common_word_analysis=common_word_analysis, power_word_analysis=power_word_analysis, keyword_in_headline=keyword_in_headline, word_length_for_headline=word_length_for_headline, reading_ease_score=reading_ease_score, content_word_length=content_word_length)
     
 if __name__ == "__main__":
     app.run(debug=True)
