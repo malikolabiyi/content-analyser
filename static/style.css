@@ -2,7 +2,7 @@
 body {
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
-    font-weight: 300;
+    font-weight: 400;
     background-color: #ffffff;
     margin: 0;
     color: #414141;
@@ -11,6 +11,8 @@ body {
 p {
     font-size: 1em;
     line-height: 1.8em;
+    word-spacing: 0.3px;
+    letter-spacing: 0.5pt;
 }
 
 strong {
@@ -29,7 +31,7 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-weight: 400;
+    font-weight: 300;
 }
 
 h1 {
@@ -38,11 +40,11 @@ h1 {
 }
 
 h2 {
-    font-size: 1.5em;
+    font-size: 2em;
 }
 
 h3 {
-    font-size: 1.2em;
+    font-size: 1.5em;
 }
 
 header {
