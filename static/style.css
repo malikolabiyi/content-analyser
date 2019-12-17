@@ -11,8 +11,6 @@ body {
 p {
     font-size: 1em;
     line-height: 1.8;
-    word-spacing: 1.5px;
-    letter-spacing: 0.8px;
 }
 
 strong {
@@ -31,7 +29,8 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-weight: 500;
+    font-weight: 400;
+    color: black;
 }
 
 h1 {
