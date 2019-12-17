@@ -1,11 +1,11 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 300;
     background-color: #ffffff;
     margin: 0;
-    color: #2e2e2e;
+    color: #414141;
 }
 
 p {
@@ -30,6 +30,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
     font-size: 1.6em;
+    color: #2e2e2e;
 }
 
 h2 {
@@ -74,3 +75,4 @@ section {
         width: 80%;
     }
 }
+

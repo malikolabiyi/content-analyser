@@ -76,7 +76,6 @@ def analyse():
             headline_score += 10
         else:
             uncommon_word_analysis = 'Your headline must contain at least 1 uncommon word. Uncommon words should occur less frequently than common words, but it is recommended to give your headline substance by adding 2 uncommon words.'
-            uncommon_word_analysis = 'Your headline ought to contain atleast a uncommon word. Uncommon words should occur less frequently than common words, but it is recommended to give your headline substance by adding 2 uncommon words.'
     uc.close()
 
     ''' SEO for headline '''
@@ -179,12 +178,8 @@ def analyse():
 
     if focus_keyword in paragraphs[0]:
         keyword_in_first_paragraph = 'Your focus keyword appeared in the first paragraph of your content, +1 for this!'
-        
     else:
-
         keyword_in_first_paragraph = "Your focus keyword must appear in your first paragraph, in case you don't have a meta description, this is going to show on the search engine."
-
-        keyword_in_first_paragraph = "Your focus keyword ought to appear in your first paragraph, incase you don't have a meta description, this is going to show on the search engine."
 
     # Paragraph Length.
     good_paragraph_length = []
@@ -237,17 +232,12 @@ def analyse():
     if len(images) > 0:
         check_image = 'Nice! Image(s) appeared in your content.'
     else:
-
         check_image = 'An image is missing in your content. Images gives a visual representation of what your content is talking about, at least one image should appeared in your content.'
-
-        check_image = 'An image are missing in your content. Images gives the visual expression of what your content is talking about, atleast one image should appeared in your content.'
-
 
     # Link
     links = soup.find_all('a')
 
     if len(links) > 0:
-
         links_analysis = 'It is so very cool that your content is linking to other people\'s content.'
     else:
         links_analysis = 'At least you should be linking to content.'

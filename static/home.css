@@ -1,6 +1,6 @@
 body {
     font-family: 'Roboto', sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 300;
     background-color: #ffffff;
     margin: 0;
@@ -21,6 +21,7 @@ a:hover {
 h1 {
     font-size: 1.5em;
     font-weight: 400;
+    color: #2e2e2e;
 }
 
 h2 {
