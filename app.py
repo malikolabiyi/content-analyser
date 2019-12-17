@@ -222,18 +222,6 @@ def analyse():
     
     heading_focus_keyword = "Your content has " + str(len(headings)) + " heading(s) only " + str(len(heading_with_focus_keyword)) + " heading(s) contains your focus keyword while " + str(len(heading_without_focus_keyword)) + " heading(s) doesn't contain your focus keyword. It is recommended that your focus keyword should appear atleast in 2 heading but not all to avoid keyword stuffing." 
 
-    
-    # Image
-    images = []
-
-    for image in soup.find_all('img'):
-        images.append(image)
-    
-    if len(images) > 0:
-        check_image = 'Nice! Image(s) appeared in your content.'
-    else:
-        check_image = 'An image is missing in your content. Images gives a visual representation of what your content is talking about, at least one image should appeared in your content.'
-
     # Link
     links = soup.find_all('a')
 
@@ -258,7 +246,7 @@ def analyse():
 
     sentence_length = 'Your content has ' + str(len(sentences)) + " sentences, only " + str(len(good_sentence_length)) + " sentences contains the recommended number of words (fewer than 20) while " + str(len(bad_sentence_length)) + " sentences contain more than recommended."
 
-    return render_template('analyse.html', links_analysis=links_analysis, sentence_length=sentence_length, headline_score=headline_score, check_image=check_image, number_in_headline=number_in_headline, heading_focus_keyword=heading_focus_keyword, heading_analysis=heading_analysis, keyword_in_first_paragraph=keyword_in_first_paragraph, paragraph_analysis=paragraph_analysis, uncommon_word_analysis=uncommon_word_analysis, common_word_analysis=common_word_analysis, power_word_analysis=power_word_analysis, keyword_in_headline=keyword_in_headline, word_length_for_headline=word_length_for_headline, reading_ease_score=reading_ease_score, grade_level_score=grade_level_score, content_word_length=content_word_length)
+    return render_template('analyse.html', links_analysis=links_analysis, sentence_length=sentence_length, headline_score=headline_score, number_in_headline=number_in_headline, heading_focus_keyword=heading_focus_keyword, heading_analysis=heading_analysis, keyword_in_first_paragraph=keyword_in_first_paragraph, paragraph_analysis=paragraph_analysis, uncommon_word_analysis=uncommon_word_analysis, common_word_analysis=common_word_analysis, power_word_analysis=power_word_analysis, keyword_in_headline=keyword_in_headline, word_length_for_headline=word_length_for_headline, reading_ease_score=reading_ease_score, grade_level_score=grade_level_score, content_word_length=content_word_length)
     
 if __name__ == "__main__":
     app.run(debug=True)
