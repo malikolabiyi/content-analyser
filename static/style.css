@@ -10,13 +10,13 @@ body {
 
 p {
     font-size: 1em;
-    line-height: 1.8em;
-    word-spacing: 0.3px;
-    letter-spacing: 0.5pt;
+    line-height: 1.8;
+    word-spacing: 1.5px;
+    letter-spacing: 0.8px;
 }
 
 strong {
-    font-weight: 400;
+    font-weight: 700;
 }
 
 a {
@@ -31,12 +31,11 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-weight: 300;
+    font-weight: 500;
 }
 
 h1 {
     font-size: 1.6em;
-    color: #2e2e2e;
 }
 
 h2 {
@@ -48,7 +47,6 @@ h3 {
 }
 
 header {
-    color: #4dabf7;
     padding: 10px;
     margin: 0;
     box-shadow: 1px 1px #efefef;
